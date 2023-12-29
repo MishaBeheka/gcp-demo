@@ -1,9 +1,23 @@
 FROM eclipse-temurin:21_35-jre
+VOLUME /tmp
+ARG JAR_FILE
+COPY ${JAR_FILE} final-task-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","/final-task-0.0.1-SNAPSHOT.jar"]
+
+# Use an official Maven image as the base image
+FROM maven:3.9.6-eclipse-temurin-21-jammy AS build
+# Set the working directory in the container
 WORKDIR /app
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:resolve
-
+# Copy the pom.xml and the project files to the container
+COPY pom.xml .
 COPY src ./src
-
-CMD ["./mvnw", "spring-boot:run"]
+# Build the application using Maven
+RUN mvn clean package -DskipTests
+# Use an official OpenJDK image as the base image
+FROM eclipse-temurin:21.0.1_12-jre-jammy
+# Set the working directory in the container
+WORKDIR /app
+# Copy the built JAR file from the previous stage to the container
+COPY - from=build /app/target/final-task-0.0.1-SNAPSHOT.jar .
+# Set the command to run the application
+CMD ["java", "-jar", "final-task-0.0.1-SNAPSHOT.jar"]
