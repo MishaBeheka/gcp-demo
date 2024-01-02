@@ -1,15 +1,15 @@
-spring:
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=gcp_final_task
-    username: postgres
-    password: *
-
-  jpa:
-    hibernate:
-      default_schema: gcp_final_task
-      ddl-auto: validate
-      show-sql: true
-  flyway:
-    driver-class-name: org.postgresql.Driver
-    enabled: true
+#spring:
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=gcp_final_task
+#    username: postgres
+#    password: pass
+#
+#  jpa:
+#    hibernate:
+#      default_schema: gcp_final_task
+#      ddl-auto: validate
+#      show-sql: true
+#  flyway:
+#    driver-class-name: org.postgresql.Driver
+#    enabled: false
