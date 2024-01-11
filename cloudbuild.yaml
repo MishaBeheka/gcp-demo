@@ -4,7 +4,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/gcp-final-task-app:$SHORT_SHA']
   - name: 'gcr.io/cloud-builders/kubectl'
-    args: ['set', 'image', 'deployment/test-deploy-java-app-service', 'java-app-container=gcr.io/$PROJECT_ID/gcp-final-task-app:$SHORT_SHA']
+    args: ['set', 'image', 'deployment/epam-final-task-java-app-deployment', 'java-app-image=gcr.io/$PROJECT_ID/gcp-final-task-app:$SHORT_SHA']
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
       - 'CLOUDSDK_CONTAINER_CLUSTER=epam-final-task-demo-cluster'
