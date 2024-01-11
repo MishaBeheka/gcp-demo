@@ -8,4 +8,5 @@ steps:
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
       - 'CLOUDSDK_CONTAINER_CLUSTER=epam-final-task-demo-cluster'
+      - '--internal-ip'
 images: ['gcr.io/$PROJECT_ID/gcp-final-task-app:$SHORT_SHA']
