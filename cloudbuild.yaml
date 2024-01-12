@@ -7,5 +7,5 @@ steps:
 #    args: ['set', 'image', 'deployment/java-app', 'java-app=europe-west1-docker.pkg.dev/gcp-final-task-project/epam-final-task-project-artifact-registry-repo/java-app:$SHORT_SHA']
 #    env:
 #      - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
-#      - 'CLOUDSDK_CONTAINER_CLUSTER=public-demo-cluster'
+#      - 'CLOUDSDK_CONTAINER_CLUSTER=epam-final-task-cluster'
 images: ['europe-west1-docker.pkg.dev/gcp-final-task-project/epam-final-task-project-artifact-registry-repo/java-app:$SHORT_SHA']
