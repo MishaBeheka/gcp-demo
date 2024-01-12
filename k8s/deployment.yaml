@@ -24,24 +24,3 @@ spec:
           ports:
             - containerPort: 8080
               protocol: TCP
----
-apiVersion: v1
-kind: Service
-metadata:
-  annotations:
-    cloud.google.com/neg: '{"ingress":true}'
-  labels:
-    app: java-app
-  name: java-app
-  namespace: default
-spec:
-  allocateLoadBalancerNodePorts: true
-  ports:
-    - nodePort: 32648
-      port: 80
-      protocol: TCP
-      targetPort: 8080
-  selector:
-    app: java-app
-  sessionAffinity: None
-  type: LoadBalancer
