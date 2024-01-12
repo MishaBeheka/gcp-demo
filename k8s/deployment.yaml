@@ -18,7 +18,7 @@ spec:
         app: java-app
     spec:
       containers:
-        - image: europe-west1-docker.pkg.dev/gcp-final-task-project/epam-final-task-project-artifact-registry-repo/java-app:v0.1
+        - image: '{{IMAGE}}'
           imagePullPolicy: IfNotPresent
           name: java-app
           ports:
