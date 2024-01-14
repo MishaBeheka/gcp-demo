@@ -42,5 +42,6 @@ spec:
           args:
             - '--quiet'
             - '--private-ip'
+            - '--structured-logs'
             - '--port=5432'
             - 'gcp-final-task-project:europe-west1:gcp-final-task-project-db'
