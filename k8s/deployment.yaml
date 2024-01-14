@@ -17,6 +17,7 @@ spec:
       labels:
         app: java-app
     spec:
+      serviceAccountName: cloudsql-ksa
       containers:
         - image: '{{IMAGE}}'
           imagePullPolicy: IfNotPresent
