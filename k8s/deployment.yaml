@@ -25,12 +25,12 @@ spec:
             - containerPort: 8080
               protocol: TCP
           env:
-            - name: DB_USERNAME
+            - name: SPRING_DATASOURCE_USERNAME
               valueFrom:
                 secretKeyRef:
                   name: gcp-final-task-db-secret
                   key: username
-            - name: DB_PASSWORD
+            - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: gcp-final-task-db-secret
