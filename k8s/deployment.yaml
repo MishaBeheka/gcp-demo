@@ -45,7 +45,6 @@ spec:
             - '--quiet'
             - '--private-ip'
             - '--structured-logs'
-            - '--port=5432'
-            - 'gcp-final-task-project:europe-west1:gcp-final-task-project-db'
+            - 'localhost:5432=gcp-final-task-project:europe-west1:gcp-final-task-project-db'
           securityContext:
             runAsNonRoot: true
