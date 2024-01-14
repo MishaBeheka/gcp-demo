@@ -24,3 +24,22 @@ spec:
           ports:
             - containerPort: 8080
               protocol: TCP
+          env:
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: gcp-final-task-db-secret
+                  key: username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: gcp-final-task-db-secret
+                  key: password
+        - name: 'java-app-db-proxy'
+          image: 'gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.8.1'
+          imagePullPolicy: IfNotPresent
+          args:
+            - '--quiet'
+            - '--private-ip'
+            - '--port=5432'
+            - 'gcp-final-task-project:europe-west1:gcp-final-task-project-db'

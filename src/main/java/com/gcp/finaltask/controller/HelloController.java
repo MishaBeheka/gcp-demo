@@ -12,6 +12,6 @@ public class HelloController {
 
     @GetMapping
     public String hello() {
-        return "Hello from GCP final task!";
+        return "Hello from GCP final task with DB!";
     }
 }
