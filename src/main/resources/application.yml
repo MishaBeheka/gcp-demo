@@ -7,6 +7,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
+      default_schema: gcp_final_task
   flyway:
     driver-class-name: org.postgresql.Driver
-    enabled: false
+    enabled: true
+    default-schema: gcp_final_task
