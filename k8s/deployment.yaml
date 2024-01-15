@@ -44,8 +44,6 @@ spec:
         - name: 'java-app-db-proxy'
           image: 'gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.8.1'
           imagePullPolicy: IfNotPresent
-          command:
-            - '/java-app-db-proxy'
           args:
             - '--quiet'
             - '--private-ip'
