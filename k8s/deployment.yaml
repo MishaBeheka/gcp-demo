@@ -42,7 +42,7 @@ spec:
                   name: gcp-final-task-db-secret
                   key: password
         - name: 'java-app-db-proxy'
-          image: 'gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.8.1'
+          image: 'gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.7.2'
           imagePullPolicy: IfNotPresent
           args:
             - '--quiet'
