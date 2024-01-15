@@ -18,6 +18,8 @@ spec:
         app: java-app
     spec:
       serviceAccountName: 'cloudsql-ksa'
+      nodeSelector:
+        cloud.google.com/gke-nodepool: extended-node-pool
       containers:
         - image: '{{IMAGE}}'
           imagePullPolicy: IfNotPresent
